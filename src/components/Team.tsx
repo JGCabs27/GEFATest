@@ -9,10 +9,11 @@ interface TeamMemberProps {
   qualifications: string[];
   image: string;
   email: string;
+  linkedinUrl: string;
   isReversed?: boolean;
 }
 
-const TeamMember: React.FC<TeamMemberProps> = ({ name, chineseName, role, qualifications, image, email, isReversed }) => {
+const TeamMember: React.FC<TeamMemberProps> = ({ name, chineseName, role, qualifications, image, email, linkedinUrl, isReversed }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -40,7 +41,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({ name, chineseName, role, qualif
         <h4 className="text-2xl font-bold text-blue-900 mb-4">{role}</h4>
         <div className="flex space-x-4">
           <a 
-            href="https://www.linkedin.com/in/jgcbuco/" 
+            href={linkedinUrl}
             target="_blank" 
             rel="noopener noreferrer" 
             className="text-gray-500 hover:text-blue-500 transition-colors"
@@ -51,7 +52,7 @@ const TeamMember: React.FC<TeamMemberProps> = ({ name, chineseName, role, qualif
             <MessageCircle size={24} />
           </a>
           <a 
-            href={`mailto:${email}`} 
+            href={`mailto:${email}`}
             className="text-gray-500 hover:text-blue-500 transition-colors"
           >
             <Mail size={24} />
@@ -75,7 +76,8 @@ const Team: React.FC = () => {
         "Chartered Alternative Investment Analyst Association (CAIA)"
       ],
       image: "/Wei.png",
-      email: "SohWeiXuan@rep.greateasternfa.sg"
+      email: "SohWeiXuan@rep.greateasternfa.sg",
+      linkedinUrl: "https://www.linkedin.com/in/weixuan-soh/"
     },
     {
       name: "Denise Teo Jiya Yi",
@@ -88,7 +90,9 @@ const Team: React.FC = () => {
         "BA, Tourism & Events Management and Public Relations (Double Major)"
       ],
       image: "/Denise.jpg",
-      email: "DeniseTeoJY@rep.greateasternfa.sg"
+      email: "DeniseTeoJY@rep.greateasternfa.sg",
+      // TODO: Replace with Denise's actual LinkedIn URL when available
+      linkedinUrl: "https://www.linkedin.com/in/weixuan-soh/"
     }
   ];
 
@@ -119,6 +123,7 @@ const Team: React.FC = () => {
               qualifications={member.qualifications}
               image={member.image}
               email={member.email}
+              linkedinUrl={member.linkedinUrl}
               isReversed={index % 2 !== 0}
             />
           ))}

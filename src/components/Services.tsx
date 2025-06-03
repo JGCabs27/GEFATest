@@ -37,7 +37,7 @@ const Services: React.FC = () => {
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto">
           {services.map((service, index) => (
-            <Link to="/services" key={index}>
+            <Link to="/services\" key={index}>
               <motion.div
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
@@ -62,3 +62,5 @@ const Services: React.FC = () => {
     </section>
   );
 };
+
+export default Services

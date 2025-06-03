@@ -8,10 +8,11 @@ interface TeamMemberProps {
   role: string;
   qualifications: string[];
   image: string;
+  email: string;
   isReversed?: boolean;
 }
 
-const TeamMember: React.FC<TeamMemberProps> = ({ name, chineseName, role, qualifications, image, isReversed }) => {
+const TeamMember: React.FC<TeamMemberProps> = ({ name, chineseName, role, qualifications, image, email, isReversed }) => {
   return (
     <motion.div
       initial={{ opacity: 0, y: 30 }}
@@ -38,13 +39,21 @@ const TeamMember: React.FC<TeamMemberProps> = ({ name, chineseName, role, qualif
         </div>
         <h4 className="text-2xl font-bold text-blue-900 mb-4">{role}</h4>
         <div className="flex space-x-4">
-          <a href="#" className="text-gray-500 hover:text-blue-500 transition-colors">
+          <a 
+            href="https://www.linkedin.com/in/jgcbuco/" 
+            target="_blank" 
+            rel="noopener noreferrer" 
+            className="text-gray-500 hover:text-blue-500 transition-colors"
+          >
             <Linkedin size={24} />
           </a>
           <a href="#" className="text-gray-500 hover:text-blue-500 transition-colors">
             <MessageCircle size={24} />
           </a>
-          <a href="#" className="text-gray-500 hover:text-blue-500 transition-colors">
+          <a 
+            href={`mailto:${email}`} 
+            className="text-gray-500 hover:text-blue-500 transition-colors"
+          >
             <Mail size={24} />
           </a>
         </div>
@@ -65,7 +74,8 @@ const Team: React.FC = () => {
         "Association of Chartered Certified Accountants (ACCA)",
         "Chartered Alternative Investment Analyst Association (CAIA)"
       ],
-      image: "/Wei.png"
+      image: "/Wei.png",
+      email: "SohWeiXuan@rep.greateasternfa.sg"
     },
     {
       name: "Denise Teo Jiya Yi",
@@ -77,7 +87,8 @@ const Team: React.FC = () => {
         "GEFA Since 2021 – Employee Benefits Specialist",
         "BA, Tourism & Events Management and Public Relations (Double Major)"
       ],
-      image: "/Denise.jpg"
+      image: "/Denise.jpg",
+      email: "DeniseTeoJY@rep.greateasternfa.sg"
     }
   ];
 
@@ -107,6 +118,7 @@ const Team: React.FC = () => {
               role={member.role}
               qualifications={member.qualifications}
               image={member.image}
+              email={member.email}
               isReversed={index % 2 !== 0}
             />
           ))}

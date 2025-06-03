@@ -7,24 +7,26 @@ import Testimonial from './components/Testimonial';
 import Team from './components/Team';
 import Footer from './components/Footer';
 import TestimonialsPage from './pages/Testimonials';
+import ServicesPage from './pages/Services';
 
 function App() {
   return (
     <Router>
       <div className="min-h-screen font-sans">
+        <Header />
         <Routes>
           <Route path="/testimonials" element={<TestimonialsPage />} />
+          <Route path="/services" element={<ServicesPage />} />
           <Route path="/" element={
             <>
-              <Header />
               <Hero />
               <Services />
               <Testimonial />
               <Team />
-              <Footer />
             </>
           } />
         </Routes>
+        <Footer />
       </div>
     </Router>
   );

@@ -19,7 +19,7 @@ const Header: React.FC = () => {
 
   const navItems = [
     { name: 'Home', path: '/' },
-    { name: 'About', path: '/#about' },
+    { name: 'About', path: '/about' },
     { name: 'Services', path: '/services' },
     { name: 'Contact', path: '/#contact' }
   ];
@@ -92,4 +92,4 @@ const Header: React.FC = () => {
   );
 };
 
-export default Header
+export default Header;

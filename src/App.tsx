@@ -8,6 +8,7 @@ import Team from './components/Team';
 import Footer from './components/Footer';
 import TestimonialsPage from './pages/Testimonials';
 import ServicesPage from './pages/Services';
+import About from './pages/About';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
         <Routes>
           <Route path="/testimonials" element={<TestimonialsPage />} />
           <Route path="/services" element={<ServicesPage />} />
+          <Route path="/about" element={<About />} />
           <Route path="/" element={
             <>
               <Hero />

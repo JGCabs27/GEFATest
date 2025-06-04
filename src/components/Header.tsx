@@ -21,7 +21,7 @@ const Header: React.FC = () => {
     { name: 'Home', path: '/' },
     { name: 'About', path: '/about' },
     { name: 'Services', path: '/services' },
-    { name: 'Contact', path: '/#contact' }
+    { name: 'Contact', path: '/contact' }
   ];
 
   const isHomePage = location.pathname === '/';
